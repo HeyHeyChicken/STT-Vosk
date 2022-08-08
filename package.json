@@ -1,0 +1,23 @@
+{
+  "name": "nova-stt-vosk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeyHeyChicken/SST-Vosk.git"
+  },
+  "author": "Antoine Duval",
+  "bugs": {
+    "url": "https://github.com/HeyHeyChicken/NOVA-STT-Google/issues"
+  },
+  "homepage": "https://github.com/HeyHeyChicken/NOVA-STT-Google#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
