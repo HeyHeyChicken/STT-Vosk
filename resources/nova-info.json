@@ -1,4 +1,4 @@
 {
-  "Title": "STT - Google",
-  "Description": "This skill will allow your assistant to understand your voice (connection needed) with the Google's STT service."
+  "Title": "STT - Vosk",
+  "Description": "This skill will allow your assistant to understand your voice (connection is not needed) with the Vosk's STT service."
 }
