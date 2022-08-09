@@ -30,7 +30,7 @@ class STTVosk extends LIBRARIES.Skill{
       const SPLITTER = "\"text\" :";
       for(let i = 0; i < _messages.length; i++){
         if(_messages[i].includes(SPLITTER)){
-          _callback(_messages[i].split(SPLITTER)[1]);
+          _callback(_messages[i].split(SPLITTER)[1].slice(1,-1));
           break;
         }
       }
