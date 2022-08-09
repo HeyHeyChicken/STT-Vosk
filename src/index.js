@@ -56,13 +56,17 @@ class STTVosk extends LIBRARIES.Skill{
   CheckPIPVersion(_main, _callback){
     this.Terminal("pip3 --version", function (_error_code, _messages) {
         if (_error_code === 0) {
-            const VERSION = _messages[0].slice("pip ".length).split(" from ")[0].split(".");
-            const NUMERIC_VERSION = parseInt(VERSION[0]) + parseInt(VERSION[1]) * 0.1;
-            if(NUMERIC_VERSION >= 20.3){
-              _callback();
-            }
-            else{
-              _main.Log("STT-Vosk : Your pip version must be \"20.3\" and newer.", "red");
+            for(let i = 0; i < _messages.length; i++){
+              if(_messages[i].startsWith("pip ")){
+                const VERSION = _messages[0].slice("pip ".length).split(" from ")[0].split(".");
+                const NUMERIC_VERSION = parseInt(VERSION[0]) + parseInt(VERSION[1]) * 0.1;
+                if(NUMERIC_VERSION >= 20.3){
+                  _callback();
+                }
+                else{
+                  _main.Log("STT-Vosk : Your pip version must be \"20.3\" and newer.", "red");
+                }
+              }
             }
         } else {
           _main.Log("STT-Vosk : An error occurred while checking the version of pip.", "red");
