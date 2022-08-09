@@ -55,7 +55,7 @@ class STTVosk extends LIBRARIES.Skill{
 
   CheckPIPVersion(_main, _callback){
     this.Terminal("pip3 --version", function (_error_code, _messages) {
-      console.log(_messages);
+      console.log(_messages, _error_code);
         if (_error_code === 0) {
             for(let i = 0; i < _messages.length; i++){
               if(_messages[i].startsWith("pip ")){
