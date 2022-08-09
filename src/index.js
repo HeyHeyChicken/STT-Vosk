@@ -61,6 +61,7 @@ class STTVosk extends LIBRARIES.Skill{
               if(_messages[i].startsWith("pip ")){
                 const VERSION = _messages[0].slice("pip ".length).split(" from ")[0].split(".");
                 const NUMERIC_VERSION = parseInt(VERSION[0]) + parseInt(VERSION[1]) * 0.1;
+                console.log(NUMERIC_VERSION);
                 if(NUMERIC_VERSION >= 20.3){
                   _callback();
                 }
