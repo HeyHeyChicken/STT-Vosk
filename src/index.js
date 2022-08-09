@@ -90,7 +90,9 @@ class STTVosk extends LIBRARIES.Skill{
               SELF.Terminal("pip3 -v install vosk", function (_error_code, _messages) {
                   if (_error_code === 0) {
                     _main.Log("STT-Vosk : Model download. This may take a few minutes.", "red");
-                    SELF.SpeechTotext(LIBRARIES.Path.join(SELF.RootPath, "empty.wav"), function(_message){});
+                    SELF.SpeechTotext(LIBRARIES.Path.join(SELF.RootPath, "empty.wav"), function(_message){
+                      _main.Log("STT-Vosk : Model is downloaded.", "green");
+                    });
                   } else {
                     _main.Log("STT-Vosk : An error occurred while installing Vosk.", "red");
                   }
