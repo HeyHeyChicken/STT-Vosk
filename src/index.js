@@ -35,6 +35,7 @@ class STTVosk extends LIBRARIES.Skill{
     }
 
     this.Terminal("python3 " + LIBRARIES.Path.join(this.RootPath, "wav.py") + " " + lang + " " + _wavPath, function (_error_code, _messages) {
+      console.log(_messages);
       const SPLITTER = "\"text\" : ";
       for(let i = 0; i < _messages.length; i++){
         if(_messages[i].includes(SPLITTER)){
@@ -152,10 +153,8 @@ class STTVosk extends LIBRARIES.Skill{
 
   Recognize(_path, _callback){
     const SELF = this;
-    console.log(_path);
     SELF.SpeechTotext(_path, function(_message){
       _message = _message.charAt(0).toUpperCase() + _message.slice(1);
-      console.log(_message);
       _callback(_message);
     });
   }
