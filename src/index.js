@@ -26,9 +26,15 @@ class STTVosk extends LIBRARIES.Skill{
   }
 
   SpeechTotext(_wavPath, _callback){
-    console.log(this.Main.Settings.Language);
+    let lang = this.Main.Settings.Language;
+    switch(this.Main.Settings.Language){
+      case "fr-FR":
+        lang = "fr";
+      case "en-US":
+        lang = "en-us";
+    }
 
-    this.Terminal("python3 " + LIBRARIES.Path.join(this.RootPath, "wav.py") + " fr "+ _wavPath, function (_error_code, _messages) {
+    this.Terminal("python3 " + LIBRARIES.Path.join(this.RootPath, "wav.py") + " " + lang + " " + _wavPath, function (_error_code, _messages) {
       const SPLITTER = "\"text\" : ";
       for(let i = 0; i < _messages.length; i++){
         if(_messages[i].includes(SPLITTER)){
