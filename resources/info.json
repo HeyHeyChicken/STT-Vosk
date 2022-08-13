@@ -5,6 +5,7 @@
 		"en-US": "This skill will allow your assistant to understand your voice with the Vosk's STT service."
 	},
 	"language": [
-		"fr-FR"
+		"fr-FR",
+		"en-US"
 	]
 }
