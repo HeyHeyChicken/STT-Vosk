@@ -16,7 +16,7 @@ class STTVosk extends LIBRARIES.Skill{
     SELF.CheckPythonVersion(_main, function(){
       SELF.CheckPIPVersion(_main, function(){
         SELF.CheckVoskInstalled(_main, function(){
-          _main.Log("STT-Vosk : Everything is operational.", "green");
+          _main.Log("STT-Vosk : Everything is operational (" + SELF.Main.Settings.Language + ").", "green");
           SELF.Main.STT = SELF;
         });
       });
