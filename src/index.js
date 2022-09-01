@@ -30,11 +30,11 @@ class STTVosk extends LIBRARIES.Skill{
     switch(this.Main.Settings.Language){
       case "fr-FR":
         lang = "fr";
+        break;
       case "en-US":
         lang = "en-us";
+        break;
     }
-
-    console.log(lang);
 
     this.Terminal("python3 " + LIBRARIES.Path.join(this.RootPath, "wav.py") + " " + lang + " " + _wavPath, function (_error_code, _messages) {
       const SPLITTER = "\"text\" : ";
