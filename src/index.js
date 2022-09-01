@@ -34,6 +34,8 @@ class STTVosk extends LIBRARIES.Skill{
         lang = "en-us";
     }
 
+    console.log(lang);
+
     this.Terminal("python3 " + LIBRARIES.Path.join(this.RootPath, "wav.py") + " " + lang + " " + _wavPath, function (_error_code, _messages) {
       const SPLITTER = "\"text\" : ";
       for(let i = 0; i < _messages.length; i++){
